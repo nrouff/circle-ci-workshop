@@ -10,8 +10,8 @@ jobs:
           command:
             gradle test
       - run:
-              command:
-                      gradle jar
+          command:
+            gradle jar
       - store_test_results:
               path: build/test-results
       - store_artifacts:
