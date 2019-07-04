@@ -1,5 +1,6 @@
-version: 2.0
-jobs:
+  test:
+  package:
+
   build:
     docker:
             - image: circleci/openjdk:8-jdk
@@ -15,5 +16,6 @@ jobs:
       - store_test_results:
               path: build/test-results
       - store_artifacts:
-              path: /code/test-results
+              path: build/libs
               destination: prefix
+
