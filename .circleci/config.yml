@@ -49,5 +49,8 @@ workflows:
                                         - test
                         - dockerize:
                                 requires:
-                                    - package
+                                        - package
+
+
+                           
 
