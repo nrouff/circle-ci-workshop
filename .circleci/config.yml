@@ -38,19 +38,15 @@ jobs:
      # deploy the image
      - run: docker push $DOCKER_USER/app:$CIRCLE_SHA1
 
-
 workflows:
-        version: 2.0
-        third_job_flow:
-                jobs:
-                        - test
-                        - package:
-                                requires:
-                                        - test
-                        - dockerize:
-                                requires:
-                                        - package
-
-
-                           
+ version: 2
+ three_job_flow:
+   jobs:
+     - test
+     - package:
+         requires:
+           - test
+     - dockerize:
+         requires:
+           - package
 
